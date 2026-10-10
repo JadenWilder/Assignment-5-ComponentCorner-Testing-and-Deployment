@@ -1,34 +1,82 @@
-/* AI-generated CSS used to style the shopping cart item layout and remove button. */
-
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
   border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item-info {
+  min-width: 0;
 }
 
 .cart-item-info h3 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .cart-item-info p {
   margin: 0;
-  font-weight: bold;
+  color: #111827;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.cart-item-price {
+  color: #111827;
 }
 
 .remove-button {
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #dc2626;
-  color: white;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #dc2626;
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .remove-button:hover {
-  background-color: #b91c1c;
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.remove-button:focus-visible {
+  outline: 3px solid #fca5a5;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .cart-item {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .cart-item-info h3 {
+    font-size: 1rem;
+  }
+
+  .remove-button {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
 }

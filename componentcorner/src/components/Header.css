@@ -1,11 +1,11 @@
 .site-header {
   background: #111827;
-  color: white;
+  color: #ffffff;
   padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
@@ -15,39 +15,109 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 24px;
+}
+
+.store-name-link {
+  color: #ffffff;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .store-name {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.5px;
 }
 
 .navigation {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 26px;
 }
 
 .navigation a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
 .navigation a:hover {
-  color: #a5b4fc;
+  color: #fbbf24;
 }
 
-@media (max-width: 600px) {
+.navigation .cart-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background: #1f2937;
+}
+
+.navigation .cart-container:hover {
+  background: #374151;
+  color: #fbbf24;
+}
+
+.cart-icon {
+  font-size: 1.15rem;
+}
+
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  background: #fbbf24;
+  color: #111827;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.navigation a:focus-visible,
+.store-name-link:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 800px) {
   .header-container {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 
   .navigation {
-    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    width: 94%;
+  }
+
+  .store-name {
+    font-size: 1.55rem;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .navigation a {
+    font-size: 0.88rem;
   }
 }

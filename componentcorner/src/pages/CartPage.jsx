@@ -9,11 +9,15 @@ function CartPage({ cart, onRemoveFromCart }) {
   return (
     <section className="cart-section" id="cart">
       <div className="section-heading">
-        <h2>Shopping Cart</h2>
+        <h2>Your Shopping Cart</h2>
+        <p>Review your hats and sneakers before checking out.</p>
       </div>
 
       {cart.length === 0 ? (
-        <p className="empty-cart">Your cart is empty.</p>
+        <div className="empty-cart">
+          <h3>Your cart is empty.</h3>
+          <p>Find your next favorite hat or pair of sneakers!</p>
+        </div>
       ) : (
         <>
           <div className="cart-items">
@@ -28,6 +32,9 @@ function CartPage({ cart, onRemoveFromCart }) {
 
           <div className="cart-total">
             <h3>Total: ${cartTotal.toFixed(2)}</h3>
+            <p>
+              Your total reflects all items currently in your cart.
+            </p>
           </div>
         </>
       )}

@@ -1,5 +1,7 @@
 .app {
   min-height: 100vh;
+  background: #ffffff;
+  color: #111827;
 }
 
 .products-section {
@@ -15,20 +17,24 @@
 }
 
 .section-heading h2 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   color: #111827;
 }
 
 .section-heading p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 650px;
   color: #6b7280;
   font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   align-items: stretch;
 }
@@ -36,43 +42,89 @@
 .about-section {
   width: 90%;
   max-width: 900px;
-  margin: 20px auto 0;
+  margin: 20px auto 60px;
   padding: 60px 30px;
   text-align: center;
   background: #f3f4f6;
   border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .about-section h2 {
-  margin-top: 0;
+  margin: 0 0 18px;
   color: #111827;
   font-size: 2rem;
+  font-weight: 800;
 }
 
 .about-section p {
   color: #4b5563;
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: 1.05rem;
   max-width: 700px;
   margin: 0 auto;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 4px;
+}
+
 @media (max-width: 900px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.1rem;
   }
 }
 
 @media (max-width: 600px) {
   .products-section {
+    width: 92%;
     padding: 45px 0;
   }
 
   .product-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
   }
 
   .section-heading h2 {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+
+  .section-heading p {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    width: 92%;
+    margin: 10px auto 40px;
+    padding: 40px 22px;
+  }
+
+  .about-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
   }
 }

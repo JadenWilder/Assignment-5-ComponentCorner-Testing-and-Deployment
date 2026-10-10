@@ -8,6 +8,7 @@ function ProductCard({ product, onAddToCart }) {
         src={product.image}
         alt={product.name}
         className="product-image"
+        loading="lazy"
       />
 
       <div className="product-info">
@@ -26,8 +27,10 @@ function ProductCard({ product, onAddToCart }) {
           </Link>
 
           <button
+            type="button"
             className="product-button"
             onClick={() => onAddToCart(product)}
+            aria-label={`Add ${product.name} to cart`}
           >
             Add to Cart
           </button>

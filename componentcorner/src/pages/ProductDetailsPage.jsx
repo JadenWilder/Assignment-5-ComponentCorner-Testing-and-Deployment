@@ -11,7 +11,13 @@ function ProductDetailsPage({ products, onAddToCart }) {
     return (
       <section className="product-details">
         <h2>Product Not Found</h2>
-        <Link to="/products">Back to Products</Link>
+        <p>
+          Sorry, we could not find that item. Browse our collection
+          to find a hat or pair of sneakers you like.
+        </p>
+        <Link to="/products" className="back-to-products">
+          Back to Products
+        </Link>
       </section>
     );
   }
@@ -36,8 +42,10 @@ function ProductDetailsPage({ products, onAddToCart }) {
         </p>
 
         <button
+          type="button"
           className="product-button"
           onClick={() => onAddToCart(product)}
+          aria-label={`Add ${product.name} to cart`}
         >
           Add to Cart
         </button>
@@ -45,7 +53,7 @@ function ProductDetailsPage({ products, onAddToCart }) {
         <br />
 
         <Link to="/products" className="back-to-products">
-          ← Back to Products
+          ← Back to Collection
         </Link>
       </div>
     </section>

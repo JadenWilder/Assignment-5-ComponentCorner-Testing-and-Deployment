@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer({ storeName, description, email, phone }) {
@@ -11,15 +12,19 @@ function Footer({ storeName, description, email, phone }) {
 
         <div className="footer-section">
           <h3>Contact Us</h3>
-          <p>Email: {email}</p>
-          <p>Phone: {phone}</p>
+          <p>
+            Email: <a href={`mailto:${email}`}>{email}</a>
+          </p>
+          <p>
+            Phone: <a href={`tel:${phone}`}>{phone}</a>
+          </p>
         </div>
 
         <div className="footer-section">
           <h3>Quick Links</h3>
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
+          <Link to="/">Home</Link>
+          <Link to="/products">Shop Collection</Link>
+          <Link to="/cart">Shopping Cart</Link>
         </div>
       </div>
 
